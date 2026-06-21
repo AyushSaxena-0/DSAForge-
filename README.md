@@ -4,6 +4,11 @@
 
 It features a comprehensive track of 455 DSA problems covering all major topics, along with a curated **DSAForge Core 250** track of essential interview questions. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks.
 
+#Sample Pics
+<img width="1918" height="860" alt="image" src="https://github.com/user-attachments/assets/97a9a4ce-5a8e-47d9-9435-28a640c23d63" />
+
+<img width="1917" height="858" alt="image" src="https://github.com/user-attachments/assets/e32a719e-1cbe-479e-8a0c-3880a723eaed" />
+
 ---
 
 ## 🚀 Key Features
