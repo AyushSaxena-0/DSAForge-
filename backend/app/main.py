@@ -14,7 +14,7 @@ app = FastAPI(title="DSAForge API", description="Backend API for DSAForge Person
 # CORS setup
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for local development
+    allow_origin_regex=r"https?://.*",  # Allow all origins dynamically with credentials
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

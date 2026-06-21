@@ -6,7 +6,9 @@ import { ProblemsGrid } from './components/ProblemsGrid';
 import { NotesModal } from './components/NotesModal';
 import { RefreshCw, BookOpen, CheckCircle } from 'lucide-react';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = typeof window !== 'undefined'
+  ? `${window.location.protocol}//${window.location.hostname}:8000`
+  : 'http://localhost:8000';
 
 function App() {
   const [activeView, setActiveView] = useState<'dashboard' | 'tracker'>('tracker');

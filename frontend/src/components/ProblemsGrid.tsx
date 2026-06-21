@@ -1,11 +1,9 @@
 import React, { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import type { ColDef } from 'ag-grid-community';
+import { themeQuartz, colorSchemeDark } from 'ag-grid-community';
 import type { Problem } from '../types';
 import { ExternalLink, Edit2, Plus, Minus, Search, CheckCircle2, Circle } from 'lucide-react';
-
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 interface ProblemsGridProps {
   problems: Problem[];
@@ -287,7 +285,7 @@ export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
 
       {/* Grid Container */}
       <div className="grow bg-zinc-950 border border-zinc-900 rounded-lg overflow-hidden relative shadow-inner min-h-[400px]">
-        <div className="ag-theme-alpine-dark ag-theme-custom-dark absolute inset-0">
+        <div className="absolute inset-0">
           <AgGridReact
             rowData={filteredProblems}
             columnDefs={columnDefs}
@@ -296,7 +294,18 @@ export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
             headerHeight={36}
             animateRows={false}
             suppressCellFocus={false}
-            theme="legacy"
+            theme={themeQuartz.withPart(colorSchemeDark).withParams({
+              backgroundColor: '#09090b',
+              foregroundColor: '#f4f4f5',
+              headerBackgroundColor: '#18181b',
+              headerTextColor: '#a1a1aa',
+              borderColor: '#27272a',
+              oddRowBackgroundColor: '#09090b',
+              selectedRowBackgroundColor: '#1e1b4b',
+              rowHoverColor: '#18181b',
+              accentColor: '#6366f1',
+              borderRadius: 6,
+            })}
           />
         </div>
       </div>
