@@ -17,9 +17,8 @@ interface ProblemsGridProps {
   setSelectedDifficulty: (diff: string) => void;
   selectedStatus: string;
   setSelectedStatus: (status: string) => void;
-  selectedCurriculum: string;
-  setSelectedCurriculum: (curr: string) => void;
 }
+
 
 export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
   problems,
@@ -31,9 +30,8 @@ export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
   setSelectedDifficulty,
   selectedStatus,
   setSelectedStatus,
-  selectedCurriculum,
-  setSelectedCurriculum,
 }) => {
+
   
   // Filter problems locally for instant response
   const filteredProblems = useMemo(() => {
@@ -57,12 +55,10 @@ export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
         matchesStatus = !prob.completed;
       }
       
-      // Curriculum filter
-      const matchesCurriculum = selectedCurriculum === 'All' || (selectedCurriculum === 'Top250' && prob.is_top_250);
-      
-      return matchesSearch && matchesDifficulty && matchesStatus && matchesCurriculum;
+      return matchesSearch && matchesDifficulty && matchesStatus;
     });
-  }, [problems, searchTerm, selectedDifficulty, selectedStatus, selectedCurriculum]);
+  }, [problems, searchTerm, selectedDifficulty, selectedStatus]);
+
 
 
   // Column Definitions
@@ -255,21 +251,8 @@ export const ProblemsGrid: React.FC<ProblemsGridProps> = ({
 
         {/* Filter Dropdowns */}
         <div className="flex flex-wrap items-center gap-3">
-          {/* Curriculum Filter */}
-          <div className="flex items-center space-x-2">
-            <span className="text-xs text-zinc-400 font-semibold uppercase tracking-wider">Track:</span>
-            <select
-              value={selectedCurriculum}
-              onChange={(e) => setSelectedCurriculum(e.target.value)}
-              className="bg-zinc-950 border border-zinc-800 text-indigo-400 border-indigo-500/20 text-xs rounded-md px-3 py-1.5 focus:outline-none focus:border-indigo-500/40 font-semibold"
-            >
-              <option value="All">Full Tracker (455 Qs)</option>
-              <option value="Top250">DSAForge Core 250</option>
-            </select>
-          </div>
-
-
           {/* Status Filter */}
+
           <div className="flex items-center space-x-2">
             <span className="text-xs text-zinc-400 font-semibold uppercase tracking-wider">Status:</span>
             <select

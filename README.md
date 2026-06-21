@@ -2,7 +2,7 @@
 
 **DSAForge** is a premium, full-stack, spreadsheet-like tracker and analytics dashboard for your complete DSA curriculum.
 
-It features a comprehensive track of 455 DSA problems covering all major topics, along with a curated **DSAForge Core 250** track of essential interview questions. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks.
+It features a comprehensive track of 455 DSA problems covering all major topics. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks.
 
 #Sample Pics
 <img width="1918" height="860" alt="image" src="https://github.com/user-attachments/assets/97a9a4ce-5a8e-47d9-9435-28a640c23d63" />
@@ -14,18 +14,16 @@ It features a comprehensive track of 455 DSA problems covering all major topics,
 ## 🚀 Key Features
 
 1. **Excel-Style AG Grid Tracker**:
-   - High-performance grid that handles virtualized rendering for 450+ questions with ease.
+   - High-performance grid that handles virtualized rendering for all 455 questions with ease.
    - Click-to-complete checkboxes that instantly update status and streaks.
    - Quick-increment/decrement revision count clickers (`-` / `+`).
    - Notion-style inline notes modal for logging algorithms, test cases, and time/space complexities.
    - Direct opening buttons to launch original LeetCode problems in a new tab.
    - Fully searchable by problem name or ID.
-   - Instant toggle between the full track and the curated **DSAForge Core 250**.
 
 2. **Scraper & Importer Service**:
    - Python parser script that imports and updates curriculum datasets.
    - Automatically cross-references LeetCode links against the official LeetCode problems API to resolve actual problem numbers and difficulties.
-   - Curates exactly 250 core questions evenly spread across all categories.
 
 3. **Analytics Dashboard**:
    - **KPI Overview**: Solved vs. remaining counts, completion percentages, and daily streaks.
@@ -33,6 +31,7 @@ It features a comprehensive track of 455 DSA problems covering all major topics,
    - **Difficulty Breakdown**: Color-coded visualization (Easy, Medium, Hard, conceptual) with individual completion statistics.
    - **Topic Progress**: Horizontal progress bars showing question totals and percentages for each category.
    - **Recent Solves**: A timeline displaying recently completed questions.
+
 
 
 4. **Notion/Linear Premium Styling**:

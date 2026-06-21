@@ -18,7 +18,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
-  const [selectedCurriculum, setSelectedCurriculum] = useState('All');
+
 
   
   // Modals & Loaders
@@ -241,9 +241,8 @@ function App() {
               setSelectedDifficulty={setSelectedDifficulty}
               selectedStatus={selectedStatus}
               setSelectedStatus={setSelectedStatus}
-              selectedCurriculum={selectedCurriculum}
-              setSelectedCurriculum={setSelectedCurriculum}
             />
+
 
           )}
         </div>
