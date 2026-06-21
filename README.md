@@ -2,7 +2,7 @@
 
 **DSAForge** is a premium, full-stack, spreadsheet-like tracker and analytics dashboard for your complete DSA curriculum.
 
-It features a comprehensive track of 455 DSA problems from Striver's A2Z DSA curriculum. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks. The SQLite database comes pre-seeded out of the box for quick setup.
+It features a comprehensive track of 455 curated DSA problems covering all essential algorithmic paradigms. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks. The SQLite database comes pre-seeded out of the box for quick setup.
 
 #Sample Pics
 <img width="1918" height="860" alt="image" src="https://github.com/user-attachments/assets/97a9a4ce-5a8e-47d9-9435-28a640c23d63" />

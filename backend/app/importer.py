@@ -86,17 +86,17 @@ def run_importer(db=None):
     
     leetcode_map = fetch_leetcode_database()
     
-    print("Downloading Striver's A2Z DSA Sheet...")
+    print("Downloading curated DSA curriculum sheet...")
     url = "https://raw.githubusercontent.com/hitarth-gg/CP/main/striver-a2z.json"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     try:
         with urllib.request.urlopen(req, timeout=15) as response:
-            striver_data = json.loads(response.read().decode('utf-8'))
+            curriculum_data = json.loads(response.read().decode('utf-8'))
     except Exception as e:
-        print("Error downloading Striver sheet:", e)
+        print("Error downloading curriculum sheet:", e)
         if close_db_on_exit:
             db.close()
-        return 0, 0, f"Error downloading Striver sheet: {e}"
+        return 0, 0, f"Error downloading curriculum sheet: {e}"
         
     print("Clearing old problems database...")
     db.query(models.Problem).delete()
@@ -104,7 +104,7 @@ def run_importer(db=None):
     
     problems_to_import = []
     
-    for step in striver_data:
+    for step in curriculum_data:
         step_title = step.get("step_title", "Unknown")
         topic = clean_topic_name(step_title)
         step_no = step.get("step_no", 1)
@@ -147,7 +147,7 @@ def run_importer(db=None):
                     )
                 )
                 
-    print(f"Importing {len(problems_to_import)} Striver problems...")
+    print(f"Importing {len(problems_to_import)} curated problems...")
     db.bulk_save_objects(problems_to_import)
     db.commit()
     
