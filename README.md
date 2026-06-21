@@ -2,7 +2,7 @@
 
 **DSAForge** is a premium, full-stack, spreadsheet-like tracker and analytics dashboard for your complete DSA curriculum.
 
-It features a comprehensive track of 455 DSA problems covering all major topics. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks.
+It features a comprehensive track of 455 DSA problems from Striver's A2Z DSA curriculum. **DSAForge** automatically cross-references questions against the LeetCode API to map slugs, numbers, and difficulty levels, and integrates with your GitHub repositories to automatically synchronize progress and calculate streaks. The SQLite database comes pre-seeded out of the box for quick setup.
 
 #Sample Pics
 <img width="1918" height="860" alt="image" src="https://github.com/user-attachments/assets/97a9a4ce-5a8e-47d9-9435-28a640c23d63" />
@@ -42,17 +42,17 @@ It features a comprehensive track of 455 DSA problems covering all major topics.
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** (UI Library)
+- **React 19** (Modern UI Library)
 - **TypeScript** (Strong typing)
-- **Vite** (Fast dev server and bundler)
-- **Tailwind CSS** (Modern styling and theme system)
-- **AG Grid Community** (High performance data grid)
+- **Vite v8** (Next-generation build tool)
+- **Tailwind CSS v4** (High-performance utility styling)
+- **AG Grid Community v35** (State-of-the-art virtualized data grid using Quartz themes)
 - **Lucide React** (Clean design system icons)
 
 ### Backend
 - **FastAPI** (Python web framework)
 - **SQLAlchemy** (Object-Relational Mapper)
-- **SQLite** (Initial local database, easily upgradeable to PostgreSQL)
+- **SQLite** (Pre-seeded database tracked in Git for plug-and-play setup)
 - **Uvicorn** (ASGI server)
 
 ---
@@ -101,11 +101,12 @@ The `problems` table structure is configured as follows:
 | `id` | `INTEGER` (PK) | Auto-increment | Unique identifier |
 | `topic` | `VARCHAR` | *Required* | Categorized topic from assignment file name |
 | `problem_name` | `VARCHAR` | *Required* | Problem title parsed or fetched from LeetCode |
-| `leetcode_number`| `VARCHAR` | `"NA"` | LeetCode problem ID number (e.g. 1920) |
+| `leetcode_number`| `VARCHAR` | `"NA"` | LeetCode problem ID number (e.g. 1) |
 | `difficulty` | `VARCHAR` | `"NA"` | Problem difficulty (Easy, Medium, Hard, or NA) |
 | `direct_url` | `VARCHAR` | `""` | Direct link to LeetCode problem page |
-| `assignment_file`| `VARCHAR` | *Required* | File name from Kunal's assignments repo (e.g., `05-arrays.md`) |
+| `assignment_file`| `VARCHAR` | *Required* | Curriculum track file name (e.g., `01-basics.md`) |
 | `completed` | `BOOLEAN` | `False` | Progress checkbox state |
 | `revision_count` | `INTEGER` | `0` | Count of times the user has revised this problem |
 | `notes` | `TEXT` | `""` | User comments and algorithmic review notes |
 | `date_solved` | `VARCHAR` | `None` | ISO date of completion (YYYY-MM-DD) for streaks |
+| `is_top_250` | `BOOLEAN` | `False` | Flag identifying if problem belongs to curated subset |
