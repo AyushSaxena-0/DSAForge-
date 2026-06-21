@@ -15,9 +15,9 @@ venv/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Databases
-*.db
-backend/dsaforge.db
+
+# Ignore old root database
+/dsaforge.db
 
 # IDEs and editors
 .idea/
